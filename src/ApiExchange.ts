@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export class ApiExchange {
-  url: string;
   params: any;
-  constructor(url: string, params: any) {
-    this.url = url;
+  url = 'https://api.exchangerate.host/convert'
+
+  constructor( params: any) {
     this.params = params;
   }
 

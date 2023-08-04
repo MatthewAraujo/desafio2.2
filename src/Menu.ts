@@ -16,15 +16,16 @@ export class Menu {
   execute() {
     const {from, to, amount}  = this.showMenu()
 
-    const initialize = new Conversao( {
+    const conversao = new Conversao( {
       from,
       to,
       amount,
     })
-    initialize.execute().then(() => {
-      console.log('Conversão realizada com sucesso')
-    })
-
+    //try catch
+    try {
+      conversao.execute()
+    } catch (err) {
+      console.log(err)
+    }
   }
-  
 }

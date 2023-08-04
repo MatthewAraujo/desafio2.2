@@ -6,7 +6,6 @@ export class Conversao {
    from: string
    to: string
    amount: string
-   url = 'https://api.exchangerate.host/convert'
 
   constructor({from, to, amount}: ExchangeMoney){
     this.from = from
@@ -21,7 +20,7 @@ export class Conversao {
 
 
   getApi(){
-    const getApi = new ApiExchange(this.url, {from: this.from, to: this.to, amount: this.amount})
+    const getApi = new ApiExchange({from: this.from, to: this.to, amount: this.amount})
     const response = getApi.fetchApi()
     return response
   }
